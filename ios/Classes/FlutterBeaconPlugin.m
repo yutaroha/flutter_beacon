@@ -287,6 +287,9 @@
     if (!self.locationManager) {
         // initialize location manager if it itsn't
         self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.allowsBackgroundLocationUpdates = YES;
+        self.locationManager.pausesLocationUpdatesAutomatically = NO;
+        [self.locationManager startUpdatingLocation];
         self.locationManager.delegate = self;
     }
 }
